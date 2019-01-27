@@ -1,0 +1,18 @@
+<div class="container spacer">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Login</div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label class="control-label">Identifiant:</label>
+        <input class="form-control" type="text" [(ngModel)]="utilisateur.id" placeholder="Username"/>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Password:</label>
+        <input class="form-control" type="password" [(ngModel)]="utilisateur.password" placeholder="Password"/>
+      </div>
+
+      <button class="btn btn-primary" (click)="login()">Save</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="container spacer">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Nouveau Utilisateur</div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label class="control-label">Identifiant:</label>
+        <input class="form-control" type="text" [(ngModel)]="utilisateur.id"/>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Nom:</label>
+        <input class="form-control" type="text" [(ngModel)]="utilisateur.nom"/>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Prenom:</label>
+        <input class="form-control" type="text" [(ngModel)]="utilisateur.prenom"/>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Email:</label>
+        <input class="form-control" type="text" [(ngModel)]="utilisateur.email"/>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Password:</label>
+        <input class="form-control" type="password" [(ngModel)]="utilisateur.password"/>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label">Groupe:</label>
+          <select class="form-control" name="groupe" [(ngModel)]="utilisateur.groupe" >
+              <option [ngValue]="groupe" *ngFor="let groupe of groupes" > {{groupe.idGroupe}}</option>
+          </select>
+        </div>
+
+     
+                    
+                    
+
+      <button class="btn btn-primary" (click)="saveUtilisateur()">Save</button>
+    </div>
+  </div>
+</div>

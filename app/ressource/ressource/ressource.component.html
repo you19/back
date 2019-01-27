@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="container spacer">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Liste des Ressources</div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <tr>
+          <th>ID</th><th>Nom_DepotDoctorat</th><th>Discussion</th><th>Agenda</th><th>Projet</th>
+        </tr>
+        <tr *ngFor="let r of ressources">
+          <td>{{r.idRes}}</td>
+          <td>{{r.nomDD}}</td>
+          <td>{{r.nomDisc}}</td>
+          <td>{{r.nomAgenda}}</td>
+          <td>{{r.projet?.nomCourt}}</td>
+          
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+

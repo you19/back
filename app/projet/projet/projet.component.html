@@ -1,0 +1,51 @@
+<app-header></app-header>
+<div class="container spacer">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Liste des Projets</div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <tr>
+            <th>Etat</th> <th>ID</th><th>Nom Court</th><th>Nom Long</th><th>Description</th><th>Theme</th><th>Propriétaire</th><th *ngIf="utilisateur.id=='admin'">Action</th>
+        </tr>
+        <tr *ngFor="let c of projets" >
+    
+          <td *ngIf="c.prop?.nom==utilisateur.id || utilisateur.id=='admin'">
+            <div *ngIf="c.type">
+En cours
+            </div>
+            <div *ngIf="!c.type">
+stopé
+              </div>
+          </td>
+
+
+
+          <td *ngIf="c.prop?.nom==utilisateur.id || utilisateur.id=='admin'">{{c.idProjet}}</td>
+          <td  *ngIf="c.prop?.nom==utilisateur.id || utilisateur.id=='admin'">{{c.nomCourt}}</td>
+          <td *ngIf="c.prop?.nom==utilisateur.id || utilisateur.id=='admin'">{{c.nomLong}}</td>
+          <td *ngIf="c.prop?.nom==utilisateur.id || utilisateur.id=='admin'">{{c.description}}</td>
+          <td  *ngIf="c.prop?.nom==utilisateur.id || utilisateur.id=='admin'">{{c.theme}}</td>
+          
+          <td *ngIf="c.prop?.nom==utilisateur.id || utilisateur.id=='admin'">{{c.prop?.nom}}</td>
+         
+          <td *ngIf=" utilisateur.id=='admin' " >
+          
+              <div *ngIf="c.valide">  VALIDé </div>
+              <div *ngIf="!c.valide"> 
+                  <a (click)="valider(c.idProjet)" class="clickibale" >Valider</a>
+              </div>                           
+            
+          </td>
+
+          <td *ngIf="utilisateur.id=='admin'">
+            
+              <a (click)="cloture(c.idProjet,c)" class="clickibale" >changer l'etat</a>
+          </td>
+          
+         
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
